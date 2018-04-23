@@ -8,5 +8,6 @@
 {
 	fun1 = () => {
 		console.log('my first funciton');
+		console.log('add new commit from mac');
 	}
 }
