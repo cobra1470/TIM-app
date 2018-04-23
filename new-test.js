@@ -6,5 +6,7 @@
  */
 
 {
-	
+	fun1 = () => {
+		console.log('my first funciton');
+	}
 }
