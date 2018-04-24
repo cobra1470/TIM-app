@@ -1,16 +1,11 @@
 <template>
-    <div id="header">
-        <headerbar :msg="myMsg"></headerbar>
-    </div>
+    <header-bar :msg="myMsg"></header-bar>
 </template>
 
 <script>
-// import headerbar from "./header-bar.vue"
-
 
 export default {
     name: 'message',
-    // components: { headerbar },
     data () {
         return {
             myMsg: '12333'

@@ -3,11 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import headerBar from '@/components/headerBar'
 
-import headerbar from '@/components/header-bar'
-
-Vue.component("headerbar", headerbar)
-
+Vue.component("header-bar", headerBar)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

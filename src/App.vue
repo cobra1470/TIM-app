@@ -1,6 +1,7 @@
 <template>
-    <div id="app">
-        <img src="./assets/logo.png">
+
+    <div id="app" v-cloak>
+    	<h1></h1>
         <router-view/>
     </div>
 </template>
@@ -12,5 +13,5 @@
 </script>
 
 <style lang="scss">
-  @import  "./assets/css/common";
+  @import  "./assets/scss/common";
 </style>
