@@ -1,12 +1,12 @@
 <template>
-    <header id="header">
+    <div id="search-bar">
         {{ msg }}
-    </header>
+    </div>
 </template>
 
 <script>
 export default {
-    name: 'headerBar',
+    name: 'searchBar',
     props: ['msg']
 }
 </script>

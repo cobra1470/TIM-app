@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import headerBar from '@/components/headerBar'
+import headerBar from '@/components/common/headerBar'
 
 Vue.component("header-bar", headerBar)
 Vue.config.productionTip = false
