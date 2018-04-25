@@ -2,7 +2,6 @@
     <div class="item-friend">
     	<slot name="photo">
     		<div class="f-photo">
-    			<img :src="'../../assets/images/photos/' + friend.photo" alt="">
     			<img :src="resetPhoto(friend.photo)" alt="">
     			<!-- <img :src="friend.photo" alt=""> -->
     		</div>
