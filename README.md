@@ -50,6 +50,7 @@ methods: {
 > chrome 中 rem 的最小值为12px 
 > 在调试时以 rem 为基准的尺寸，最好到移动端浏览器上测试
 
+this is test
 
 
 ## Build Setup
