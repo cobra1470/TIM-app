@@ -25,6 +25,27 @@ assetsPublicPath的值 改为   "./"
 
 ```
 
+> 用 v-for 循环组件时，切记添加 key
+```
+<item-friend v-for="(item, index) in getData" :key="index">{{ item }}</item-friend>
+```
+
+> img src 动态引入
+```
+<img :src="'../../assets/images/photos/' + friend.photo">
+```
+> img引用的是静态文件下的资源，不会被webpack编译，报404错误
+> 应改为
+```
+<img :src="resetPhoto(friend.photo)" alt="">
+
+methods: {
+	resetPhoto(src){
+		return require('../../assets/images/photos/' + src);
+	}
+}
+```
+
 ## notes
 > chrome 中 rem 的最小值为12px 
 > 在调试时以 rem 为基准的尺寸，最好到移动端浏览器上测试

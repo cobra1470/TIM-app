@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import messageList from '@/components/page/messageList'
 import contactList from '@/components/page/contactList'
 
+
 Vue.use(Router)
 
 export default new Router({
