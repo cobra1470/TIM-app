@@ -57,7 +57,7 @@ export default {
 		font-size: $size;
 		color: #a1a1a1;
 		text-align: $align;
-		background-color: #f3f3f3;
+		background-color: #f7f8f9;
 		outline: none;
 	}
 	@mixin padding{

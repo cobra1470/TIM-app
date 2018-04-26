@@ -24,10 +24,13 @@ export default {
 		display: flex;
 		display: -webkit-flex;
         width: 100%;
-		height: 7rem;
-		line-height: 7rem;
+		height: 5.6rem;
+		line-height: 5.6rem;
 		border-top: .1rem solid #d5dbdd;
         background-color: #fff;
+    }
+    #footer .iconfont{
+        font-size: 2.8rem;
     }
     #footer .item-flex{
         display: block;

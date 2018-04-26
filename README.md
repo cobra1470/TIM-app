@@ -150,10 +150,30 @@ rules: [
 ]
 ```
 
+### flex 下文章强制不换行且超出隐藏
+> 父级容器加 min-height: 0 当前容器 display: block
+```
+<div class="box">
+    <div class="flex-left">left flex</div>
+    <div class="flex-right">This is no warp text </div>
+</div>
+
+.box{
+    ....
+    min-height: 0;
+}
+flex-right{
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+```
 
 ## notes
-- chrome 中 rem 的最小值为12px 
-- 在调试时以 rem 为基准的尺寸，最好到移动端浏览器上测试
+> chrome 中 rem 的最小值为12px 
+> 在调试时以 rem 为基准的尺寸，最好到移动端浏览器上测试
 
 
 ## Build Setup

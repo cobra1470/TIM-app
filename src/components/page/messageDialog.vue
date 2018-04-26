@@ -1,8 +1,11 @@
 <template>
     <div class="box">
         <header-bar :pageTitle="pageTitle" class="h-contact-list">
-            <i slot="left" class="text">添加</i>
-            <i slot="right" class="iconfont icon-arrow-right" @click="goBack"></i>
+            <div slot="left" @click="goBack">
+                <i class="iconfont icon-arrow-left"></i>
+                <em class="text">消息</em>
+            </div>
+            <i slot="right" class="iconfont icon-arrow" @click="goBack"></i>
         </header-bar>
         <div id="mc">
             <search-bar :msg="searchMsg"></search-bar>
@@ -16,7 +19,7 @@ import searchBar from '../common/searchBar';
 import friendList from '../common/friendList';
 
 export default {
-    name: 'contactList',
+    name: 'messageDialog',
     components: {
         'search-bar': searchBar,
         'friend-list': friendList,
@@ -26,7 +29,7 @@ export default {
             headerMsg: 'header bar',
             searchMsg: 'search bar',
             listMsg: 'friend list',
-            pageTitle: '联系人'
+            pageTitle: this.$route.params.number
         }
     },
     methods: {
