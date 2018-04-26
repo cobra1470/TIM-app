@@ -13,14 +13,11 @@ assetsPublicPath的值 改为   "./"
 
 ```
 
-......................................................................................
-
 ### 用 v-for 循环组件时，切记添加 key**
 ```
 <item-friend v-for="(item, index) in getData" :key="index">{{ item }}</item-friend>
-```
 
-......................................................................................
+```
 
 ### url-loader 路径问题
 > webpack 打包后的结构
@@ -52,14 +49,13 @@ src
   --main.js
 static
 ```
-### 针对这种目录结构 引用 img
 #### a)=> home.vue 中通过 url 引用
 > *使用开发环境的相对路径即可 ../../assets/ 会被编译成 ../../static/*
 ```
 $el{
         background: url('../../assets/images/x.png') no-repeat;
     }
-// 
+
 ```
 > b)=> common.scss 中通过 url 引用
 > *./assets/ 会被编译为 ../../static/*
@@ -68,7 +64,7 @@ $el{
 $el{
         background: url('./assets/images/bg-header.png') no-repeat;
     }
-// 
+
 ```
 #### c)=> home.vue 中通过 src 动态引用
 ```
@@ -89,8 +85,8 @@ methods: {
 		return require('../../assets/images/' + src);
 	}
 }
-```
 
+```
 #### 2、源码结构二 (css/images/fonts 等资源放在 public 目录下)
 ```
 src
@@ -106,8 +102,8 @@ static
   --scss
   --images
   --fonts
+
 ```
-#### 针对这种目录结构 引用 img
 #### a)=> home.vue 中通过 url 引用
 > *使用开发环境的相对路径即可 ../../../static/ 会被编译成 ../../static/*
 ```
@@ -123,7 +119,7 @@ $el{
 $el{
         background: url('../static/images/x.png') no-repeat;
     }
-// 
+
 ```
 #### c)=> home.vue 中通过 src 动态引用
 ```
@@ -132,6 +128,7 @@ let _img = {
 	a: "x.png"
 }
 <img :src="'../../assets/images/' + _img.a">
+
 ```
 > 报404错误：img引用的是静态文件下的资源，不会被 webpack 编译
 > *直接把 json 中 src 路径修改成编译后的路径*
@@ -142,12 +139,8 @@ let _img = {
 ```
 > 注：综合上面的问题，推荐把 fonts/image/mock-data 等静态资源放在 static 目录中，js/scss/css 放在 assets 目录中
 
-......................................................................................
-
-> **引入 iconfont 报错**
+### 引入 iconfont 报错
 > *归根结底还是 url-loader 路径的问题 参照 scss 中 url 引入图片*
-
-......................................................................................
 
 ### 打包后的文件 url 引入的图片无法获取 
 > *添加 publicPath*
@@ -171,12 +164,11 @@ rules: [
 ```
 
 
-======================================================================================
 ## notes
 > chrome 中 rem 的最小值为12px 
 > 在调试时以 rem 为基准的尺寸，最好到移动端浏览器上测试
 
-======================================================================================
+
 ## Build Setup
 
 ``` bash
