@@ -30,4 +30,5 @@
 
 <style lang="scss">
   @import  "./assets/scss/common";
+  @import  "../static/fonts/iconfont.css";
 </style>

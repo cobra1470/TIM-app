@@ -3,19 +3,8 @@
 > 心动不如行动，学习 Vue 从第一个项目开始！
 
 ## 采坑
-> 引入 iconfont 报错
-```
-# 归根结底还是 url-loader 路径的问题
-# webpack 打包后，所有资源文件都在 public 下，我们在 css 中写的相对路径就不对了
-# 解决办法：已打包后路径的思维模式 编写路径 
-# 相对路径
-url(../fonts/iconfont.eot)
-# 改成
-url(./assets/fonts/iconfont.eot)
 
-```
-
-> npm run build后，打开浏览器一片空白
+> **npm run build后，打开浏览器一片空白**
 ```
 # webpack编译输出的发布路径
 # 将 build 的路径前缀修改为 ' ./ '（原本为 ' / '），是因为打包(npm run build)之后，
@@ -25,32 +14,171 @@ assetsPublicPath的值 改为   "./"
 
 ```
 
-> 用 v-for 循环组件时，切记添加 key
+......................................................................................
+
+> **用 v-for 循环组件时，切记添加 key**
 ```
 <item-friend v-for="(item, index) in getData" :key="index">{{ item }}</item-friend>
 ```
 
-> img src 动态引入
+......................................................................................
+
+> **url-loader 路径问题**
+> webpack 打包后的结构
 ```
-<img :src="'../../assets/images/photos/' + friend.photo">
+dist
+	--static
+		--css
+			--xxx.css
+		--images
+			--x.png
+		--js
+	--index.html
 ```
-> img引用的是静态文件下的资源，不会被webpack编译，报404错误
-> 应改为
+> 1、源码结构一 (css/images/fonts 等资源放在 assets 目录下)
 ```
-<img :src="resetPhoto(friend.photo)" alt="">
+src
+	--assets
+		--scss
+			--common.scss
+		--images
+			--x.png
+		--fonts
+	--components
+		--common
+		--page
+			---home.vue
+	--router
+	--App.vue
+	--main.js
+static
+```
+> 针对这种目录结构 引用 img
+> a)=> home.vue 中通过 url 引用
+> *使用开发环境的相对路径即可 ../../assets/ 会被编译成 ../../static/*
+```
+$el{
+        background: url('../../assets/images/x.png') no-repeat;
+    }
+// 
+```
+> b)=> common.scss 中通过 url 引用
+> *./assets/ 会被编译为 ../../static/*
+> **
+```
+$el{
+        background: url('./assets/images/bg-header.png') no-repeat;
+    }
+// 
+```
+> c)=> home.vue 中通过 src 动态引用
+```
+// 模拟动态引用
+let _img = {
+	a: "x.png"
+}
+<img :src="'../../assets/images/' + _img.a">
+```
+> 报404错误：img引用的是静态文件下的资源，不会被 webpack 编译
+> *可以通过 require 的方式引入，这里的路径使用开发环境的相对路径，../../assets/ 会被编译成 ../../static/*
+> *注意：这种解决方法会导致 打包的时候 publicPath 与 css 中 url 引入的图片冲突，解决方法在 2-c)*
+```
+<img :src="resetPhoto(_img.a)">
 
 methods: {
 	resetPhoto(src){
-		return require('../../assets/images/photos/' + src);
+		return require('../../assets/images/' + src);
 	}
 }
 ```
 
+> 2、源码结构二 (css/images/fonts 等资源放在 public 目录下)
+```
+src
+	--assets
+	--components
+		--common
+		--page
+			--home.vue
+	--router
+	--App.vue
+	--main.js
+static
+	--scss
+	--images
+	--fonts
+```
+> 针对这种目录结构 引用 img
+> a)=> home.vue 中通过 url 引用
+> *使用开发环境的相对路径即可 ../../../static/ 会被编译成 ../../static/*
+```
+$el{
+        background: url('../../../static/images/x.png') no-repeat;
+    }
+// 
+```
+> b)=> common.scss 中通过 url 引用
+> *../static/ 会被编译为 ../../static/*
+> **
+```
+$el{
+        background: url('../static/images/x.png') no-repeat;
+    }
+// 
+```
+> c)=> home.vue 中通过 src 动态引用
+```
+// 模拟动态引用
+let _img = {
+	a: "x.png"
+}
+<img :src="'../../assets/images/' + _img.a">
+```
+> 报404错误：img引用的是静态文件下的资源，不会被 webpack 编译
+> *直接把 json 中 src 路径修改成编译后的路径*
+> *推荐使用这种方式*
+```
+"photo": "./static/images/photos/03.jpg"
+
+```
+> 注：综合上面的问题，推荐把 fonts/image/mock-data 等静态资源放在 static 目录中，js/scss/css 放在 assets 目录中
+
+......................................................................................
+
+> **引入 iconfont 报错**
+> *归根结底还是 url-loader 路径的问题 参照 scss 中 url 引入图片*
+
+......................................................................................
+
+> **打包后的文件 url 引入的图片无法获取**
+> *添加 publicPath*
+```
+build
+	--webpack.base.conf.js
+// 给 img 的 rules 添加 publicPath: "../../" option
+
+rules: [
+	...
+	{
+		test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+		loader: 'url-loader',
+		options: {
+			limit: 10000,
+			name: utils.assetsPath('images/[name].[hash:7].[ext]'),
+			publicPath: "../../"
+		}
+	}, 
+]
+
+```
+
+
+======================================================================================
 ## notes
 > chrome 中 rem 的最小值为12px 
 > 在调试时以 rem 为基准的尺寸，最好到移动端浏览器上测试
 
-
+======================================================================================
 ## Build Setup
 
 ``` bash

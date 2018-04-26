@@ -2,8 +2,11 @@
     <div class="item-friend">
     	<slot name="photo">
     		<div class="f-photo">
-    			<img :src="resetPhoto(friend.photo)" alt="">
-    			<!-- <img :src="friend.photo" alt=""> -->
+                <img :src="friend.photo" alt="">
+                <!-- <img :src="resetPhoto(friend.photo)" alt=""> -->
+                <!-- <img :src="resetPhoto(friend.photo)" alt=""> -->
+    			<!-- <img :src="resetPhoto(friend.photo)" alt=""> -->
+    			<!-- <img src="../public/images/photos/01.jpg" alt=""> -->
     		</div>
     	</slot>
     	<slot name="name">name</slot>
@@ -23,9 +26,7 @@ export default {
     	}
     },
     methods: {
-    	resetPhoto(src){
-  			return require('../../assets/images/photos/' + src);
-    	}
+    	
     }
 }
 </script>

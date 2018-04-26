@@ -3,7 +3,7 @@
 		"base": {
 			"number": "398071320",
 			"nickname": "Cobra Liu",
-			"photo": "01.jpg",
+			"photo": "./static/images/photos/01.jpg",
 			"zoneName": "枫叶海洋",
 			"signature": "Simple life",
 			"location": "安徽 合肥",
@@ -24,7 +24,7 @@
 		"base": {
 			"number": "79221664",
 			"nickname": "柒 。",
-			"photo": "02.jpg",
+			"photo": "./static/images/photos/02.jpg",
 			"zoneName": "冠男的空间",
 			"signature": "/gold//smile/Grow old along with me, the best is yet to be.",
 			"location": "上海 浦东新区",
@@ -45,7 +45,7 @@
 		"base": {
 			"number": "616994366",
 			"nickname": "、倾城。",
-			"photo": "03.jpg",
+			"photo": "./static/images/photos/03.jpg",
 			"zoneName": "马弘博的空间",
 			"signature": "。灿烂不枉其美 枯衰不失其心",
 			"location": "安徽 合肥",

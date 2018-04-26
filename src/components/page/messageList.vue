@@ -22,8 +22,8 @@ import searchBar from '../common/searchBar';
 import friend from '../common/friend';
 // import friendList from '../common/friendList';
 
-import friendsData from '../../assets/static-data/friends.json'
-import messagesData from '../../assets/static-data/messages.json'
+import friendsData from '../../../static/mock-data/friends.json'
+import messagesData from '../../../static/mock-data/messages.json'
 // console.log(messagesData)
 
 export default {
@@ -66,8 +66,8 @@ export default {
 
 <style lang="scss">
     #header.h-message-list{
-        background: url('../../assets/images/bg-header.png') no-repeat;
-        background-size: 100%;   
+        background: url('../../../static/images/bg-header.png') no-repeat;
+        background-size: 100%;
     }
     #header.h-message-list .flex-left .iconfont,
     #header.h-message-list .flex-right .iconfont{
