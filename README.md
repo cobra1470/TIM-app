@@ -4,7 +4,7 @@
 
 ## 采坑
 
-> **npm run build后，打开浏览器一片空白***
+### npm run build后，打开浏览器一片空白
 > webpack编译输出的发布路径
 > 将 build 的路径前缀修改为 ' ./ '（原本为 ' / '），是因为打包(npm run build)之后，外部引入 js 和 css 文件时，如果路径以 ' / ' 开头，在本地是无法找到对应文件的（服务器上没问题）
 ```
@@ -15,14 +15,14 @@ assetsPublicPath的值 改为   "./"
 
 ......................................................................................
 
-> **用 v-for 循环组件时，切记添加 key**
+### 用 v-for 循环组件时，切记添加 key**
 ```
 <item-friend v-for="(item, index) in getData" :key="index">{{ item }}</item-friend>
 ```
 
 ......................................................................................
 
-> **url-loader 路径问题**
+### url-loader 路径问题
 > webpack 打包后的结构
 ```
 dist
@@ -34,7 +34,7 @@ dist
     --js
 	--index.html
 ```
-> 1、源码结构一 (css/images/fonts 等资源放在 assets 目录下)
+#### 1、源码结构一 (css/images/fonts 等资源放在 assets 目录下)
 ```
 src
   --assets
@@ -52,8 +52,8 @@ src
   --main.js
 static
 ```
-> 针对这种目录结构 引用 img
-> a)=> home.vue 中通过 url 引用
+### 针对这种目录结构 引用 img
+#### a)=> home.vue 中通过 url 引用
 > *使用开发环境的相对路径即可 ../../assets/ 会被编译成 ../../static/*
 ```
 $el{
@@ -70,7 +70,7 @@ $el{
     }
 // 
 ```
-> c)=> home.vue 中通过 src 动态引用
+#### c)=> home.vue 中通过 src 动态引用
 ```
 // 模拟动态引用
 let _img = {
@@ -91,7 +91,7 @@ methods: {
 }
 ```
 
-> 2、源码结构二 (css/images/fonts 等资源放在 public 目录下)
+#### 2、源码结构二 (css/images/fonts 等资源放在 public 目录下)
 ```
 src
   --assets
@@ -107,8 +107,8 @@ static
   --images
   --fonts
 ```
-> 针对这种目录结构 引用 img
-> a)=> home.vue 中通过 url 引用
+#### 针对这种目录结构 引用 img
+#### a)=> home.vue 中通过 url 引用
 > *使用开发环境的相对路径即可 ../../../static/ 会被编译成 ../../static/*
 ```
 $el{
@@ -125,7 +125,7 @@ $el{
     }
 // 
 ```
-> c)=> home.vue 中通过 src 动态引用
+#### c)=> home.vue 中通过 src 动态引用
 ```
 // 模拟动态引用
 let _img = {
@@ -149,7 +149,7 @@ let _img = {
 
 ......................................................................................
 
-> **打包后的文件 url 引入的图片无法获取**
+### 打包后的文件 url 引入的图片无法获取 
 > *添加 publicPath*
 ```
 build => webpack.base.conf.js => rules
