@@ -4,11 +4,10 @@
 
 ## 采坑
 
-> **npm run build后，打开浏览器一片空白**
+> **npm run build后，打开浏览器一片空白***
+> webpack编译输出的发布路径
+> 将 build 的路径前缀修改为 ' ./ '（原本为 ' / '），是因为打包(npm run build)之后，外部引入 js 和 css 文件时，如果路径以 ' / ' 开头，在本地是无法找到对应文件的（服务器上没问题）
 ```
-# webpack编译输出的发布路径
-# 将 build 的路径前缀修改为 ' ./ '（原本为 ' / '），是因为打包(npm run build)之后，
-# 外部引入 js 和 css 文件时，如果路径以 ' / ' 开头，在本地是无法找到对应文件的（服务器上没问题）
 config => index.js => build:
 assetsPublicPath的值 改为   "./"
 
@@ -27,30 +26,30 @@ assetsPublicPath的值 改为   "./"
 > webpack 打包后的结构
 ```
 dist
-	--static
-		--css
-			--xxx.css
-		--images
-			--x.png
-		--js
+  --static
+    --css
+      --xxx.css
+    --images
+      --x.png
+    --js
 	--index.html
 ```
 > 1、源码结构一 (css/images/fonts 等资源放在 assets 目录下)
 ```
 src
-	--assets
-		--scss
-			--common.scss
-		--images
-			--x.png
-		--fonts
-	--components
-		--common
-		--page
-			---home.vue
-	--router
-	--App.vue
-	--main.js
+  --assets
+    --scss
+      --common.scss
+    --images
+      --x.png
+    --fonts
+  --components
+    --common
+    --page
+      ---home.vue
+  --router
+  --App.vue
+  --main.js
 static
 ```
 > 针对这种目录结构 引用 img
@@ -95,18 +94,18 @@ methods: {
 > 2、源码结构二 (css/images/fonts 等资源放在 public 目录下)
 ```
 src
-	--assets
-	--components
-		--common
-		--page
-			--home.vue
-	--router
-	--App.vue
-	--main.js
+  --assets
+    --components
+      --common
+      --page
+        --home.vue
+  --router
+  --App.vue
+  --main.js
 static
-	--scss
-	--images
-	--fonts
+  --scss
+  --images
+  --fonts
 ```
 > 针对这种目录结构 引用 img
 > a)=> home.vue 中通过 url 引用
@@ -153,8 +152,7 @@ let _img = {
 > **打包后的文件 url 引入的图片无法获取**
 > *添加 publicPath*
 ```
-build
-	--webpack.base.conf.js
+build => webpack.base.conf.js => rules
 // 给 img 的 rules 添加 publicPath: "../../" option
 
 rules: [
