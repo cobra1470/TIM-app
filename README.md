@@ -9,14 +9,12 @@
 > 将 build 的路径前缀修改为 ' ./ '（原本为 ' / '），是因为打包(npm run build)之后，外部引入 js 和 css 文件时，如果路径以 ' / ' 开头，在本地是无法找到对应文件的（服务器上没问题）
 ```
 config => index.js => build:
-assetsPublicPath的值 改为   "./"
-
+assetsPublicPath: './'
 ```
 
 ### 用 v-for 循环组件时，切记添加 key**
 ```
 <item-friend v-for="(item, index) in getData" :key="index">{{ item }}</item-friend>
-
 ```
 
 ### url-loader 路径问题
@@ -55,7 +53,6 @@ static
 $el{
         background: url('../../assets/images/x.png') no-repeat;
     }
-
 ```
 > b)=> common.scss 中通过 url 引用
 > *./assets/ 会被编译为 ../../static/*
@@ -64,7 +61,6 @@ $el{
 $el{
         background: url('./assets/images/bg-header.png') no-repeat;
     }
-
 ```
 #### c)=> home.vue 中通过 src 动态引用
 ```
@@ -85,7 +81,6 @@ methods: {
 		return require('../../assets/images/' + src);
 	}
 }
-
 ```
 #### 2、源码结构二 (css/images/fonts 等资源放在 public 目录下)
 ```
@@ -102,7 +97,6 @@ static
   --scss
   --images
   --fonts
-
 ```
 #### a)=> home.vue 中通过 url 引用
 > *使用开发环境的相对路径即可 ../../../static/ 会被编译成 ../../static/*
@@ -110,16 +104,13 @@ static
 $el{
         background: url('../../../static/images/x.png') no-repeat;
     }
-// 
 ```
 > b)=> common.scss 中通过 url 引用
 > *../static/ 会被编译为 ../../static/*
-> **
 ```
 $el{
         background: url('../static/images/x.png') no-repeat;
     }
-
 ```
 #### c)=> home.vue 中通过 src 动态引用
 ```
@@ -128,14 +119,12 @@ let _img = {
 	a: "x.png"
 }
 <img :src="'../../assets/images/' + _img.a">
-
 ```
 > 报404错误：img引用的是静态文件下的资源，不会被 webpack 编译
 > *直接把 json 中 src 路径修改成编译后的路径*
 > *推荐使用这种方式*
 ```
 "photo": "./static/images/photos/03.jpg"
-
 ```
 > 注：综合上面的问题，推荐把 fonts/image/mock-data 等静态资源放在 static 目录中，js/scss/css 放在 assets 目录中
 
@@ -147,7 +136,6 @@ let _img = {
 ```
 build => webpack.base.conf.js => rules
 // 给 img 的 rules 添加 publicPath: "../../" option
-
 rules: [
 	...
 	{
@@ -160,7 +148,6 @@ rules: [
 		}
 	}, 
 ]
-
 ```
 
 
