@@ -102,7 +102,7 @@ export default {
     mounted(){
         setTimeout(() => {
             this.scrollBottom()
-        }, 0);
+        }, 100);
     }
 }
 </script>
@@ -176,15 +176,15 @@ export default {
     }
     .dialog-output .w-input{
         display: flex;
-        padding: .6rem 0;
-        border-bottom: 2px solid #eeeff0;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eeeff0;
     }
     .dialog-output .btn-send{
-        background: none;
         outline: none;
-        letter-spacing: 2px;
+        padding: 0 .4rem;
         margin-left: .5rem;
-        color: #0081d4;
+        color: #0076fb;
+        background: none;
     }
     .dialog-output .input-text{
         outline: none;
@@ -200,8 +200,8 @@ export default {
         flex: 1;
         text-align: center;
         .iconfont{
+            color: #868991;
             font-size: 2.2rem;
-
         }
     }
 </style>

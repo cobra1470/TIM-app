@@ -1,6 +1,6 @@
 <template>
     <footer id="footer">   
-		<router-link class="item-flex" to="/messageList">
+		<router-link class="item-flex" to="/">
 			<i class="iconfont icon-message" title="message"></i>
 		</router-link>
 		<router-link class="item-flex" to="/documentList">
