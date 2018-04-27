@@ -60,3 +60,11 @@
    overflow: auto;
 }
 .friend-list{height: 800px;background-color: red;}
+.item-dialog a{
+    color: #0081d4;
+    text-decoration: underline;
+}
+.item-dialog img{
+    display: block;
+    max-width: 100%;
+}

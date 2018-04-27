@@ -9,7 +9,7 @@
             <slot name="name">
                 <h2 class="name">{{ friend.name }}</h2>   
             </slot>
-            <slot name="lastMessage"></slot>
+            <slot name="lastText"></slot>
         </div>
     	<slot name="lastTimer"></slot>
     </router-link>
@@ -68,6 +68,7 @@ export default {
         display: flex;
         flex: 1;
         align-items:center;
+        font-weight: normal;
     }
     .item-friend .flex-middle .last-message{
         display: block;

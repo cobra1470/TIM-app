@@ -3,26 +3,26 @@
         <header-bar :pageTitle="pageTitle" class="h-contact-list">
             <div slot="left" @click="goBack">
                 <i class="iconfont icon-arrow-left"></i>
-                <em class="text">消息</em>
+                <em class="text">返回</em>
             </div>
             <i slot="right" class="iconfont icon-arrow" @click="goBack"></i>
         </header-bar>
         <div id="mc">
-            <search-bar :msg="searchMsg"></search-bar>
-            <friend-list :msg="listMsg"></friend-list>
+            {{ this.$route.params.number }}
         </div>
     </div>
 </template>
 
 <script>
-import searchBar from '../common/searchBar';
-import friendList from '../common/friendList';
+
+import friendsData from '../../../static/mock-data/friends.json'
+
+// const __Friend = 
 
 export default {
-    name: 'messageDialog',
+    name: 'messagePanel',
     components: {
-        'search-bar': searchBar,
-        'friend-list': friendList,
+        
     },
     data () {
         return {

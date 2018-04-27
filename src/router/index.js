@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import messageList from '@/components/page/messageList'
 import contactList from '@/components/page/contactList'
-import messageDialog from '@/components/page/messageDialog'
+import messagePanel from '@/components/page/messagePanel'
+import friendPanel from '@/components/page/friendPanel'
 
 
 Vue.use(Router)
@@ -28,10 +29,16 @@ export default new Router({
       component: contactList
     },
     {
-    	path: '/messageDialog/:number',
+      path: '/messagePanel/:number',
       meta:{index:2},
-    	name: 'messageDialog',
-    	component: messageDialog
+      name: 'messagePanel',
+      component: messagePanel
+    },
+    {
+    	path: '/friendPanel/:number',
+      meta:{index:1},
+    	name: 'friendPanel',
+    	component: friendPanel
     }
   ]
 });

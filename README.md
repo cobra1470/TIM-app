@@ -171,6 +171,10 @@ flex-right{
 
 ```
 
+### vue组件中的 v-html 中的 element 不继承样式
+> v-html 绑定的内容相当于子组件，当前组件 style 的 scoped 导致 css 仅对当前组件生效
+> 解决方法：把 v-html 的样式，写在没有 scoped 的 style 中
+
 ## notes
 > chrome 中 rem 的最小值为12px 
 > 在调试时以 rem 为基准的尺寸，最好到移动端浏览器上测试
