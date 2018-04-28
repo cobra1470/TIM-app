@@ -1,5 +1,5 @@
 <template>
-    <div class="box">
+    <div class="flex-box">
         <header-bar :pageTitle="pageTitle" class="h-contact-list">
             <i slot="left" class="text">添加</i>
             <i slot="right" class="iconfont icon-arrow-right" @click="goBack"></i>

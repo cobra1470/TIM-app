@@ -1,5 +1,5 @@
 <template>
-    <div class="box box-friend-panel">
+    <div class="flex-box box-friend-panel">
         <header-bar :pageTitle="pageTitle" :class="{'no-bg' : noBg}">
             <div slot="left" @click="goBack">
                 <i class="iconfont icon-arrow-left"></i>

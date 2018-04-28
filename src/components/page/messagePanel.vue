@@ -1,5 +1,5 @@
 <template>
-    <div class="box">
+    <div class="flex-box">
         <header-bar :pageTitle="pageTitle" class="h-message-panel">
             <router-link slot="left" to="/">
                 <i class="iconfont icon-arrow-left"></i>

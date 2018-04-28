@@ -6,8 +6,8 @@
 		<router-link class="item-flex" to="/documentList">
 			<i class="iconfont icon-documents" title="document"></i>
 		</router-link>
-		<router-link class="item-flex" to="accountCenter">
-			<i class="iconfont icon-workplace" title="account"></i>
+		<router-link class="item-flex" to="workplace">
+			<i class="iconfont icon-workplace" title="workplace"></i>
 		</router-link>
     </footer>
 </template>
@@ -38,7 +38,7 @@ export default {
     	flex-grow: 1;
     	text-align: center;
     }
-    #footer .router-link-active .iconfont{
+    #footer .router-link-exact-active .iconfont{
     	color: #0f8cff;
     }
 </style>

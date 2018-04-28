@@ -1,5 +1,5 @@
 <template>
-    <div class="box">
+    <div class="flex-box">
         <header-bar :pageTitle="pageTitle" class="h-message-list">
             <router-link slot="left" class="iconfont icon-contact" to="contactList"></router-link>
             <i slot="right" class="iconfont icon-add"></i>
@@ -15,12 +15,11 @@
                 </item-friend>
             </div>
         </div>
-        <footer-bar></footer-bar>
+        <!-- <footer-bar></footer-bar> -->
     </div>
 </template>
 
 <script>
-import footerBar from '../common/footerBar'
 import searchBar from '../common/searchBar'
 import friend from '../common/friend'
 import Utils from '../../assets/js/utils.js'
@@ -31,7 +30,6 @@ import messagesData from '../../../static/mock-data/messages.json'
 export default {
     name: 'friendList',
     components: {
-        'footer-bar': footerBar,
         'search-bar': searchBar,
         'item-friend': friend,
     },
