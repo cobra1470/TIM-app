@@ -1,0 +1,39 @@
+/*
+Error: Inconsistent indentation: "    \t" was used for indentation, but the rest of the document was indented using 4 spaces.
+        on line 3 of F:\WorkPlace\myProject\TIM-app\src\components\common\headerBar.vue
+
+1: <template>
+2:     <header id="header">
+3:     	<div class="flex-left">
+4:         	<slot name="left">left</slot>
+5:     	</div>
+6:         <div class="flex-center">
+7:         	<slot name="pageTitle">{{ pageTitle }}</slot>
+8:         </div>
+
+Backtrace:
+F:\WorkPlace\myProject\TIM-app\src\components\common\headerBar.vue:3
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/engine.rb:494:in `block in tabulate'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/engine.rb:452:in `each'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/engine.rb:452:in `each_with_index'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/engine.rb:452:in `tabulate'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/engine.rb:417:in `_to_tree'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/plugin.rb:82:in `update_stylesheets'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/exec/sass_scss.rb:51:in `process_result'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/exec/base.rb:52:in `parse'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/exec/base.rb:19:in `parse!'
+D:/Program Files (x86)/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.5/bin/sass:13:in `<top (required)>'
+D:/Program Files (x86)/Ruby25-x64/bin/sass:23:in `load'
+D:/Program Files (x86)/Ruby25-x64/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Inconsistent indentation: \"    \t\" was used for indentation, but the rest of the document was indented using 4 spaces.\A         on line 3 of F:\WorkPlace\myProject\TIM-app\src\components\common\headerBar.vue\A \A 1: <template>\A 2:     <header id=\"header\">\A 3:     	<div class=\"flex-left\">\A 4:         	<slot name=\"left\">left</slot>\A 5:     	</div>\A 6:         <div class=\"flex-center\">\A 7:         	<slot name=\"pageTitle\">{{ pageTitle }}</slot>\A 8:         </div>"; }

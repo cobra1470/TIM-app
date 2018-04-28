@@ -26,21 +26,24 @@ export default {
         width: 100%;
 		height: 4rem;
 		line-height: 4rem;
-    }
-    #header .flex-left,
-    #header .flex-right{
-    	flex: 0 0 18%;
-        text-align: center;
-   	}
-   	#header .flex-left .text,
-    #header .flex-right .text{
-		font-size: 1.6rem;
-    	font-style: normal;
-    }
-    #header .flex-center{
-    	width:64%;
-    	font-size: 1.6rem;
-    	text-align: center;
+        .flex-left,
+        .flex-right{
+            flex: 0 0 18%;
+            text-align: center;
+            .text{
+                font-size: 1.6rem;
+                font-style: normal;
+            }
+        }
+        .flex-center{
+            width:64%;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+        .iconfont{
+            color: #464c56;
+            font-weight: 600;
+        }
     }
 
 </style>

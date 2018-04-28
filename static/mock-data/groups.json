@@ -1,0 +1,20 @@
+{
+	"groups": [
+		{
+			"id": "group1",
+			"title": "我的好友"
+		},
+		{
+			"id": "group2",
+			"title": "农仁街"
+		},
+		{
+			"id": "group3",
+			"title": "201"
+		},
+		{
+			"id": "group4",
+			"title": "大学"
+		}
+	] 
+}

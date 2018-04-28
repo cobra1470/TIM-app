@@ -5,7 +5,9 @@
             <i slot="right" class="iconfont icon-add"></i>
         </header-bar>
         <div id="mc">
-            <search-bar :searchType="searchType"></search-bar>
+            <search-bar :searchType="searchType">
+                <template slot="btnTitle">搜索</template>
+            </search-bar>
             <div class="message-list">
                 <item-friend v-for="(item, index) in initData" :key="index" :friend="item" :to="'/messagePanel'">
                     <p class="last-message" slot="lastText">{{ item.lastText }}</p>
@@ -18,9 +20,9 @@
 </template>
 
 <script>
-import footerBar from '../common/footerBar';
-import searchBar from '../common/searchBar';
-import friend from '../common/friend';
+import footerBar from '../common/footerBar'
+import searchBar from '../common/searchBar'
+import friend from '../common/friend'
 import Utils from '../../assets/js/utils.js'
 
 import friendsData from '../../../static/mock-data/friends.json'

@@ -34,15 +34,14 @@ export default {
     .item-friend{
         display: flex;
         padding: 1rem .6rem;
-        text-decoration: none;
     }
     .item-friend:active{
         background-color: #e5e6e7;
     }
     .item-friend .f-photo{
-        width: 4rem;
-        height: 4rem;
-        border-radius: 2rem;
+        width: 4.8rem;
+        height: 4.8rem;
+        border-radius: 2.4rem;
         overflow: hidden;
     }
     .item-friend .f-photo img{
@@ -72,6 +71,8 @@ export default {
     }
     .item-friend .flex-middle .last-message{
         display: block;
+        line-height: 2.4rem;
+        font-size: 1.2rem;
         color: $gray;
         white-space: nowrap;
         text-overflow: ellipsis;

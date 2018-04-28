@@ -15,10 +15,12 @@
 			"phone": "177******31"
 		},
 		"private": {
-			"birthday": "1988/17/17",
+			"birthday": "1988/11/17",
 			"Email": "lhg2work@sina.com",
-			"hometown": "中国-安徽-阜阳"
-		}
+			"hometown": "中国-安徽-阜阳",
+			"gender": "male"
+		},
+		"status": "offline"
 	},
 	"79221664": {
 		"base": {
@@ -38,8 +40,10 @@
 		"private": {
 			"birthday": "1990/05/20",
 			"Email": "79221664@qq.com",
-			"hometown": "中国-安徽-马鞍山"
-		}
+			"hometown": "中国-安徽-马鞍山",
+			"gender": "male"
+		},
+		"status": "online"
 	},
 	"616994366": {
 		"base": {
@@ -59,7 +63,9 @@
 		"private": {
 			"birthday": "1994/01/03",
 			"Email": "maboshinan@qq.com",
-			"hometown": "中国-安徽-合肥"
-		}
+			"hometown": "中国-安徽-合肥",
+			"gender": "female"
+		},
+		"status": "offline"
 	}
 }

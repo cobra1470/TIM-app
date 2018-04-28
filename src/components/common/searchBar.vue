@@ -1,7 +1,7 @@
 <template>
     <div id="search-bar" >    
         <button class="btn-search" type="button" @click="showDialog">
-        	<i class="iconfont icon-search"></i>搜索
+        	<i class="iconfont icon-search"></i><slot name="btnTitle"></slot>
         </button>
         <div class="dialog-search" v-show="isShow">
         	<div class="w-search">
@@ -58,6 +58,7 @@ export default {
 		color: #a1a1a1;
 		text-align: $align;
 		background-color: #f7f8f9;
+        border-radius: .2rem;
 		outline: none;
 	}
 	@mixin padding{
@@ -72,6 +73,7 @@ export default {
     	@include search;
     }
     #search-bar .iconfont{
+        color: #a1a1a1;
     	font-size: $size;
     }
 	.dialog-search{

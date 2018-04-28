@@ -30,13 +30,13 @@ export default {
         background-color: #fff;
     }
     #footer .iconfont{
+        color: #8e9098;
         font-size: 2.8rem;
     }
     #footer .item-flex{
         display: block;
     	flex-grow: 1;
     	text-align: center;
-    	text-decoration: none;
     }
     #footer .router-link-active .iconfont{
     	color: #0f8cff;
