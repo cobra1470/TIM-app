@@ -171,7 +171,7 @@ export default {
                         font-size: 2.2rem;
                         line-height: 2.8rem;
                         .iconfont{
-                            font-size: 2.2rem;
+                            font-size: 1.8rem;
                         }
                         .icon-male{
                             color: #00a4ff;

@@ -1,0 +1,36 @@
+{
+	"documents": [
+		{
+			"id": "doc1",
+			"thumb": "./static/images/thumb/01.jpg",
+			"title": "腾讯文档",
+			"type": "default",
+			"count": "10"
+		},
+		{
+			"id": "doc2",
+			"thumb": "./static/images/thumb/02.jpg",
+			"title": "聊天文件",
+			"type": "default",
+			"count": "3"
+		},
+		{
+			"id": "doc3",
+			"thumb": "./static/images/thumb/03.jpg",
+			"title": "邮票",
+			"type": "user",
+			"count": "12"
+		},
+		{
+			"id": "doc4",
+			"thumb": "./static/images/thumb/02.jpg",
+			"title": "临时存储",
+			"type": "user",
+			"count": "5"
+		}
+	],
+	"disk": {
+		"total": "10GB",
+		"remaining": "9.62GB"
+	}
+}

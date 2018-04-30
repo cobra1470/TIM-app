@@ -45,7 +45,7 @@ export default {
         return {
             groups: groupsData.groups,
             pageTitle: '联系人',
-            searchType: 'friend'
+            searchType: 'friend',
         }
     },
     methods: {
@@ -58,7 +58,8 @@ export default {
             _friends = _friends.filter((ele, index, array) => {
                 return ele.base.group === type;
             });
-            if(_friends.length > 0){
+            const _len = _friends.length;
+            if(_len > 0){
                 for(let f of _friends){
                     __Data.push({
                         number: f.base.number,

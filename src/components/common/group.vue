@@ -1,7 +1,9 @@
 <template>
     <div class="item-group">
         <div class="label" @click="toggle">
-            <i class="iconfont" :class="show ? 'icon-triangle-down' : 'icon-triangle-right'"></i>{{ groupTitle }}
+            <i class="iconfont" :class="show ? 'icon-triangle-down' : 'icon-triangle-right'"></i>
+            <h2 class="title">{{ groupTitle }}</h2>
+            <em class="count">{{ getCount(friends) }}</em>
         </div>
         <div class="friends" v-show="show">
             <item-friend v-for="(item, index) in friends" :key="index" :friend="item" :to="'/friendPanel'" :class="item.status"></item-friend>
@@ -20,15 +22,32 @@ export default {
     components: {
         'item-friend': friend,
     },
-    props: ['friends', 'groupTitle'],
+    props: ['friends', 'groupTitle', 'totalCount'],
     data(){
     	return {
-    		show: false
+    		show: false,
     	}
     },
     methods: {
         toggle(){
             this.show = !this.show
+        },
+        getCount(f){
+            let _total = f.length;
+            let _online = 0;
+
+            if(_total){
+                for(let _f of f){
+                    console.log(_f)
+                    if(_f.status === 'online'){
+                        console.log(_online)
+                        _online += 1
+                        console.log(_online)
+
+                    }
+                }
+            }
+            return `${_online} / ${_total}`;
         }
     },
     computed: {}
@@ -58,14 +77,22 @@ export default {
             }
         }
         .label{
+            display: flex;
             padding: 0 1rem;
             height: 3.8rem;
             line-height: 3.8rem;
-            font-size: 1.6rem;
             .iconfont{
-                margin-right: .8rem;
-                color: #aaaaaa;
-                font-size: 1.2rem;
+                margin-right: .6rem;
+                color: #aaa;
+                font-size: 1.4rem;
+            }
+            .title{
+                flex: 1;
+                font-weight: normal;
+                font-size: 1.6rem;
+            }
+            .count{
+                color: #808080;
             }
         }
         .label:active{

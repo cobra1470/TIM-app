@@ -150,7 +150,7 @@ export default {
                     align-items: center;
                     background-color: #fff;
                     box-shadow: 0 0 .3rem #ecedef;
-                    border-radius: .8rem;
+                    border-radius: 1rem;
                     .iconfont{
                         position: absolute;
                         z-index: 1;
