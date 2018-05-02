@@ -2,7 +2,7 @@
 
 > 心动不如行动，学习 Vue 从第一个项目开始！
 > 手机预览
-![avatar](http://www.bisiwuyi.com/TIM/QR-code.png)
+> ![avatar](http://www.bisiwuyi.com/TIM/QR-code.png)
 
 ## 采坑
 
