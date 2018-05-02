@@ -2,7 +2,7 @@
 
 > 心动不如行动，学习 Vue 从第一个项目开始！
 > 手机预览
-![avatar](https://github.com/cobra1470/TIM-app/tree/master/static/images/QR-code.png)
+![avatar](https://github.com/cobra1470/TIM-app/raw/master/images/QR-code.png)
 
 ## 采坑
 
